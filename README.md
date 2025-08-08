@@ -60,52 +60,38 @@ The installer will create a `.spectre/core/` directory in your current location 
 
 The Spectre workflow follows a logical progression with decision points between phases:
 
-1. **Requirements Phase** - Define user stories and acceptance criteria in structured EARS notation
-2. **Design Phase** - Document technical architecture, sequence diagrams, and implementation considerations  
-3. **Implementation Planning** - Break down work into discrete, trackable tasks
-4. **Execution Phase** - Track progress as tasks are completed
+#### 1. Generate Requirements
+```bash
+use gen-requirement.md
 
-### Getting Started
+i want to add auth with google
+```
+This will create a `requirements.md` file with structured EARS notation requirements for Google authentication.
 
-1. **Install Spectre** (see installation above)
+#### 2. Create Technical Specifications
+```bash
+use gen-spec.md
 
-2. **Create a new spec** for your feature:
-   ```bash
-   # Navigate to your project directory
-   cd your-project
-   
-   # Create a new spec directory
-   mkdir -p .spectre/specs/$(date +%Y%m%d)-feature-name
-   cd .spectre/specs/$(date +%Y%m%d)-feature-name
-   ```
+i want to add auth with google
+```
+This will create a `design.md` file with technical architecture, API design, and implementation details for the authentication system.
 
-3. **Generate requirements** using the template:
-   ```bash
-   use `gen-requirement.md`
-   
-   [user authentication feature]
-   ```
+#### 3. Plan Implementation Tasks
+```bash
+use gen-tasks.md
 
-4. **Create technical specs**:
-   ```bash
-   use `gen-spec.md`
-   
-   [user authentication feature]
-   ```
+i want to add auth with google
+```
+This will create a `tasks.md` file with discrete, trackable tasks broken down for implementation.
 
-5. **Plan implementation tasks**:
-   ```bash
-   use `gen-tasks.md`
-   
-   [user authentication feature]
-   ```
+#### 4. Execute Tasks
+```bash
+use exec-tasks.md
 
-6. **Execute tasks** using the execution guide:
-   ```bash
-   use `exec-tasks.md`
-   
-   [user authentication feature]
-   ```
+i want to add auth with google
+```
+This will create an `execution.md` file with step-by-step guidance for implementing the authentication feature.
+
 
 ### Working with AI Agents
 
