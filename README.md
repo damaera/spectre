@@ -1,6 +1,6 @@
 # Spectre
 
-A spec-driven development workflow for AI agents that bridges the gap between conceptual product requirements and technical implementation details. Spectre ensures alignment and reduces development iterations by providing structured templates and workflows.
+A spec-driven development workflow for AI coding agents that bridges the gap between conceptual product requirements and technical implementation details. Spectre ensures alignment and reduces development iterations by providing structured templates and workflows.
 
 ## What is Spectre?
 
@@ -11,126 +11,58 @@ Spectre is inspired by modern spec-driven development approaches like [Kiro](htt
 - **Plan Implementation** - Break down work into discrete, trackable tasks
 - **Execute Tasks** - Guide AI agents through implementation with clear specifications
 
-## Core Concepts
+## Benefits
 
-Spectre generates three key files that form the foundation of each specification:
-
-### 1. Requirements (`gen-requirement.md`)
-Captures user stories and acceptance criteria in structured EARS (Easy Approach to Requirements Syntax) notation. Each requirement follows this pattern:
-
-```
-WHEN [condition/event]
-THE SYSTEM SHALL [expected behavior]
-```
-
-**Example:**
-```
-WHEN a user submits a form with invalid data
-THE SYSTEM SHALL display validation errors next to the relevant fields
-```
-
-### 2. Technical Specifications (`gen-spec.md`)
-Documents technical architecture, sequence diagrams, and implementation considerations. This is where you capture the big picture of how the system will work, including components and their interactions.
-
-### 3. Task Execution (`exec-tasks.md`)
-Provides detailed implementation plans with discrete, trackable tasks. Each task is clearly defined with descriptions, expected outcomes, and dependencies.
+- **Reduced Iterations**: Clear specs prevent misunderstandings and rework
+- **Better AI Collaboration**: Structured format helps AI agents understand requirements
+- **Improved Quality**: Testable requirements lead to better implementations
+- **Faster Development**: Clear task breakdowns enable parallel work
+- **Better Documentation**: Specs serve as living documentation
 
 ## Installation
 
-### Quick Install
 ```bash
 curl -sSL https://raw.githubusercontent.com/damaera/spectre/main/install.sh | sh
-```
-
-### Manual Install
-```bash
-# Clone the repository
-git clone https://github.com/damaera/spectre.git
-cd spectre
-
-# Run the installer
-bash install.sh
 ```
 
 The installer will create a `.spectre/core/` directory in your current location with all the necessary template files.
 
 ## Usage
 
-### Workflow
-
 The Spectre workflow follows a logical progression with decision points between phases:
 
-#### 1. Generate Requirements
-```bash
-use gen-requirement.md
-
-i want to add auth with google
+### 1. Generate Requirements
 ```
-This will create a `requirements.md` file with structured EARS notation requirements for Google authentication.
+use @gen-requirement.md
 
-#### 2. Create Technical Specifications
-```bash
-use gen-spec.md
-
-i want to add auth with google
+[feature to add]
 ```
-This will create a `design.md` file with technical architecture, API design, and implementation details for the authentication system.
+This will create a `requirement.md` file.
 
-#### 3. Plan Implementation Tasks
-```bash
-use gen-tasks.md
+### 2. Create Technical Specifications
+```
+@gen-spec.md on @requirement.md
 
-i want to add auth with google
+[optional detail]
+```
+This will create a `spec.md` file with technical specification.
+
+### 3. Plan Implementation Tasks
+```
+@gen-tasks.md @spec.md
 ```
 This will create a `tasks.md` file with discrete, trackable tasks broken down for implementation.
 
-#### 4. Execute Tasks
-```bash
-use exec-tasks.md
-
-i want to add auth with google
+### 4. Execute Tasks
 ```
-This will create an `execution.md` file with step-by-step guidance for implementing the authentication feature.
+@exec-tasks.md @tasks.md
+```
+Ai agent will executing tasks.
 
-
-### Working with AI Agents
-
-Spectre is designed to work seamlessly with AI coding agents like Claude Code, Cursor, or any other AI development tool:
-
-- **Provide Context**: Share the generated spec files with your AI agent
-- **Follow Structure**: Use the EARS notation for clear, testable requirements
-- **Track Progress**: Update task status as implementation progresses
-- **Iterate**: Refine specs based on implementation feedback
-
-### Best Practices
-
-#### Requirements
-- Use EARS notation for clarity and testability
-- Make requirements specific and measurable
-- Include both happy path and error scenarios
-- Keep requirements focused on user value
-
-#### Technical Specs
-- Document key architectural decisions
-- Include sequence diagrams for complex flows
-- Specify data models and API contracts
-- Consider performance and scalability implications
-
-#### Task Planning
-- Break tasks into 2-4 hour chunks
-- Include clear acceptance criteria for each task
-- Identify dependencies between tasks
-- Plan for testing and validation
-
-#### Execution
-- Update task status regularly
-- Document decisions and trade-offs
-- Refine specs based on implementation learnings
-- Maintain clear communication with stakeholders
 
 ## File Structure
 
-After installation, your project will have this structure:
+After installation and usage, your project will have this structure:
 
 ```
 your-project/
@@ -144,17 +76,8 @@ your-project/
 │       └── YYYYMMDD-feature-name/
 │           ├── requirements.md    # Your feature requirements
 │           ├── design.md          # Your technical design
-│           ├── tasks.md           # Your implementation plan
-│           └── execution.md       # Your execution guide
+│           ├── tasks.md           # Your implementation tasks
 ```
-
-## Benefits
-
-- **Reduced Iterations**: Clear specs prevent misunderstandings and rework
-- **Better AI Collaboration**: Structured format helps AI agents understand requirements
-- **Improved Quality**: Testable requirements lead to better implementations
-- **Faster Development**: Clear task breakdowns enable parallel work
-- **Better Documentation**: Specs serve as living documentation
 
 ## Contributing
 
