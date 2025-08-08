@@ -7,7 +7,7 @@ set -e  # Exit on any error
 # Configuration
 REPO_URL="https://raw.githubusercontent.com/damaera/spectre/main"
 CORE_DIR=".spectre/core"
-TARGET_DIR="$HOME/.spectre/core"
+TARGET_DIR=".spectre/core"
 
 # Logging functions
 log_info() { echo "[INFO] $1"; }
