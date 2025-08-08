@@ -46,8 +46,8 @@ install_core_files() {
     
     for file in "${files[@]}"; do
         log_info "Installing $file..."
-        cp ".spectre/core/$file" "$TARGET_DIR/$file" || \
-            handle_error "Failed to install $file" "Check if the source file exists"
+        curl -sSL "$REPO_URL/.spectre/core/$file" -o "$TARGET_DIR/$file" || \
+            handle_error "Failed to install $file" "Check your internet connection and repository access"
     done
 }
 
