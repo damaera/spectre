@@ -81,26 +81,30 @@ The Spectre workflow follows a logical progression with decision points between 
 
 3. **Generate requirements** using the template:
    ```bash
-   cp ../../core/gen-requirement.md requirements.md
-   # Edit requirements.md with your specific requirements
+   use `gen-requirement.md`
+   
+   [user authentication feature]
    ```
 
 4. **Create technical specs**:
    ```bash
-   cp ../../core/gen-spec.md design.md
-   # Edit design.md with your technical architecture
+   use `gen-spec.md`
+   
+   [user authentication feature]
    ```
 
 5. **Plan implementation tasks**:
    ```bash
-   cp ../../core/gen-tasks.md tasks.md
-   # Edit tasks.md with your implementation plan
+   use `gen-tasks.md`
+   
+   [user authentication feature]
    ```
 
 6. **Execute tasks** using the execution guide:
    ```bash
-   cp ../../core/exec-tasks.md execution.md
-   # Follow execution.md to implement your feature
+   use `exec-tasks.md`
+   
+   [user authentication feature]
    ```
 
 ### Working with AI Agents
